@@ -1,7 +1,18 @@
-cluster:
-  size: 7
-  geo_distribution: global
+p2p:
+  port: 8080
+  bootstrap: ["/ip4/127.0.0.1/tcp/8080/p2p/QmPeer"]
+  max_peers: 50
+
+inference:
+  model_path: "/models/"
+  max_tokens: 512
+  temperature: 0.7
+
 security:
-  encryption: aes-256-gcm
-compliance:
-  gdpr: true
+  tls: false
+  cert_path: "/certs/server.crt"
+  key_path: "/certs/server.key"
+
+monitoring:
+  metrics_port: 9090
+  log_level: "info"
