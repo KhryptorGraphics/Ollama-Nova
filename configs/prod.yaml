@@ -1,0 +1,7 @@
+cluster:
+  size: 7
+  geo_distribution: global
+security:
+  encryption: aes-256-gcm
+compliance:
+  gdpr: true
